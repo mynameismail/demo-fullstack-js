@@ -1,0 +1,18 @@
+image: "node:latest"
+
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - node --version
+  - which node
+  - npm --version
+  - which npm
+  - npm install
+
+build_job:
+  stage: build
+  script:
+    - npm run build
