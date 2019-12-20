@@ -1,16 +1,21 @@
 <template>
   <div id="user">
-    <div class="card">{{ name }}, {{ age }} tahun - {{ department }}</div>
+    <div :class="'card ' + color">{{ nameAndAge }} - {{ department }}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'User',
-  props: ['name', 'age', 'department'],
+  props: ['name', 'age', 'department', 'color'],
   data: () => ({
 
-  })
+  }),
+  computed: {
+    nameAndAge() {
+      return this.name + ', ' + this.age + ' tahun'
+    }
+  }
 }
 </script>
 
@@ -19,5 +24,8 @@ export default {
     border: 1px solid grey;
     margin: 5px;
     padding: 5px;
+  }
+  .genap {
+    background-color: gray;
   }
 </style>

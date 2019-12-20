@@ -12,7 +12,8 @@
         :key="index" 
         :name="user.name" 
         :age="user.age"
-        :department="user.department" />
+        :department="user.department"
+        :color="index % 2 == 0 ? 'genap' : 'ganjil'" />
 
       <div>
         <router-link to="/about"></router-link>
